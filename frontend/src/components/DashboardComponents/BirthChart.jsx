@@ -1,18 +1,47 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const BirthChart = () => {
+  const name = "John";
+  const year = 1990;
+  const month = 6;
+  const day = 15;
+  const hour = 12;
+  const minute = 30;
+  const city = "Paris";
+  const nation = "France";
+
+  const url =
+    "https://fastapi-hack-production.up.railway.app/relationship/Alice/1990/06/15/12/30/London/UK/Bob/1985/11/20/10/45/London/UK";
+  const url2 =
+    "https://fastapi-hack-production.up.railway.app/chart/JJohn/1990/06/15/12/30/London/UK";
+  useEffect(() => {
+    fetch(url2)
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.log("Error:", error));
+  }, [url2]);
+
   return (
     <div className="p-6  bg-neutral-900" id="birth_chart">
       {/* Birth Details Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6" id="el-2u4hn828">
+      <div
+        className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6"
+        id="el-2u4hn828"
+      >
         <div
           className="lg:col-span-2 bg-white p-6 rounded-lg border border-neutral-200/30"
           id="el-sxtub9ko"
         >
-          <h3 className="text-xl font-semibold text-gray-800 mb-4" id="el-dvkdkqps">
+          <h3
+            className="text-xl font-semibold text-gray-800 mb-4"
+            id="el-dvkdkqps"
+          >
             Birth Chart Details
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4" id="el-svez0qj7">
+          <div
+            className="grid grid-cols-2 md:grid-cols-3 gap-4"
+            id="el-svez0qj7"
+          >
             {[
               { label: "Name", value: "John Doe" },
               { label: "Date of Birth", value: "15 June 1990" },
@@ -36,7 +65,10 @@ const BirthChart = () => {
           className="bg-white p-6 rounded-lg border border-neutral-200/30"
           id="el-z04fkz2l"
         >
-          <h3 className="text-xl font-semibold text-gray-800 mb-4" id="el-qalzgqbm">
+          <h3
+            className="text-xl font-semibold text-gray-800 mb-4"
+            id="el-qalzgqbm"
+          >
             Planetary Positions
           </h3>
           <div className="space-y-3" id="el-i33ooq4a">
@@ -51,7 +83,9 @@ const BirthChart = () => {
                 key={index}
               >
                 <span className="text-gray-700">{item.planet}</span>
-                <span className="font-semibold text-gray-800">{item.position}</span>
+                <span className="font-semibold text-gray-800">
+                  {item.position}
+                </span>
               </div>
             ))}
           </div>
@@ -59,12 +93,18 @@ const BirthChart = () => {
       </div>
 
       {/* Birth Chart Wheel */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6" id="el-fg84zdyb">
+      <div
+        className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6"
+        id="el-fg84zdyb"
+      >
         <div
           className="lg:col-span-2 bg-white p-6 rounded-lg border border-neutral-200/30"
           id="el-eqkqsljj"
         >
-          <h3 className="text-xl font-semibold text-gray-800 mb-4" id="el-qcr0d3sb">
+          <h3
+            className="text-xl font-semibold text-gray-800 mb-4"
+            id="el-qcr0d3sb"
+          >
             Birth Chart Wheel
           </h3>
           <div
@@ -97,12 +137,18 @@ const BirthChart = () => {
           className="bg-white p-6 rounded-lg border border-neutral-200/30"
           id="el-aeqfsj2h"
         >
-          <h3 className="text-xl font-semibold text-gray-800 mb-4" id="el-o53tebb9">
+          <h3
+            className="text-xl font-semibold text-gray-800 mb-4"
+            id="el-o53tebb9"
+          >
             House Positions
           </h3>
           <div className="space-y-3" id="el-2ylelq4i">
             {[
-              { house: "1st House (Ascendant)", description: "Leo - Self & Personality" },
+              {
+                house: "1st House (Ascendant)",
+                description: "Leo - Self & Personality",
+              },
               { house: "2nd House", description: "Virgo - Wealth & Values" },
               { house: "3rd House", description: "Libra - Communication" },
               { house: "4th House", description: "Scorpio - Home & Family" },
@@ -111,7 +157,9 @@ const BirthChart = () => {
                 className="p-3 bg-gray-50 rounded border border-neutral-200/30"
                 key={index}
               >
-                <p className="text-sm font-medium text-gray-700">{item.house}</p>
+                <p className="text-sm font-medium text-gray-700">
+                  {item.house}
+                </p>
                 <p className="text-gray-600">{item.description}</p>
               </div>
             ))}
@@ -124,10 +172,16 @@ const BirthChart = () => {
         className="bg-white p-6 rounded-lg border border-neutral-200/30"
         id="el-appss8x2"
       >
-        <h3 className="text-xl font-semibold text-gray-800 mb-4" id="el-1ynd9h8o">
+        <h3
+          className="text-xl font-semibold text-gray-800 mb-4"
+          id="el-1ynd9h8o"
+        >
           Chart Interpretations
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="el-sloh7y2c">
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          id="el-sloh7y2c"
+        >
           {[
             {
               title: "Career Insights",
